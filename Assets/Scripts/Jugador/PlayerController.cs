@@ -1,66 +1,73 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 5f;
-    public float jumpForce = 5f;
-    public Transform groundCheck; // Objeto vacío que actuará como ground check
-    public LayerMask groundLayer;
+    public float speed;
     private Vector2 move;
-    private bool isGrounded;
-    private Rigidbody rb;
-
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-
-        if (groundCheck == null)
-        {
-            Debug.LogError("Ground check object not assigned!");
-        }
-    }
-
-    void Update()
-    {
-        GetPlayerInput();
-        MovePlayer();
-
-        if (isGrounded && Input.GetButtonDown("Jump"))
-        {
-            Jump();
-        }
-    }
+    public float jumpForce;
+    public bool isGrounded;
 
     public void OnMove(InputAction.CallbackContext context)
     {
         move = context.ReadValue<Vector2>();
     }
-
-    void GetPlayerInput()
+    // Start is called before the first frame update
+    void Start()
     {
-        // Aquí puedes manejar la entrada del jugador, por ejemplo, usando Input System.
-        // Establece el valor de 'move' según la entrada del jugador.
+
     }
 
-    void MovePlayer()
+    // Update is called once per frame
+    void Update()
+    {
+        MovePlayer();
+    }
+
+    public void MovePlayer()
     {
         Vector3 movement = new Vector3(move.x, 0f, move.y);
 
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
 
         transform.Translate(movement * speed * Time.deltaTime, Space.World);
-
-        // Comprueba si el objeto está en el suelo.
-        isGrounded = Physics.Raycast(groundCheck.position, Vector3.down, 0.1f, groundLayer);
     }
 
-    void Jump()
+    // agregar que pueda saltar con el boton space
+
+    public void OnJump(InputAction.CallbackContext context)
     {
-        if (rb != null)
+        if (context.performed)
         {
-            // Aplica una fuerza hacia arriba para simular el salto.
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            Jump();
         }
     }
+
+    public void Jump()
+    {
+        // si esta en el suelo salta usa rigid body 2d
+
+        if (isGrounded)
+        {
+            GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+    }
+    // agregar que pueda disparar con la tecla F
+
+    public void OnFire(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Fire();
+        }
+    }
+
+    public void Fire()
+    {
+        Debug.Log("Fire");
+    }
+
+
 }
