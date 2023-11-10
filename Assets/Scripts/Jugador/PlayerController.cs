@@ -47,11 +47,16 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
-        // si esta en el suelo salta usa rigid body 2d
+        // si esta en el suelo es true puede saltar si no es false
 
         if (isGrounded)
         {
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            isGrounded = false;
+        }
+        else
+        {
+            isGrounded = true;
         }
     }
     // agregar que pueda disparar con la tecla F
