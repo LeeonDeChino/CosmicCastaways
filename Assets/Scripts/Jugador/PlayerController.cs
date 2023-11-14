@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 move;
     public float jumpForce;
     public bool isGrounded;
+    public SpriteRenderer sprite;
     // AGREGA ESTA VARIABLE PARA QUE EL JUGADOR PUEDA DISPARAR
     public GameObject bulletPrefab;
     // agrega el controlador de disparo
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        sprite = GetComponent<SpriteRenderer>();
 
     }
 
@@ -39,11 +41,11 @@ public class PlayerController : MonoBehaviour
 
         if (move.x > 0)
         {
-            GetComponent<SpriteRenderer>().flipX = false;
+            sprite.flipX = false;
         }
         else if (move.x < 0)
         {
-            GetComponent<SpriteRenderer>().flipX = true;
+            sprite.flipX = true;
         }
     }
 
@@ -73,17 +75,30 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-          Debug.Log("shoot");
+          Fire();
         }
     }
 
-    // llama a esta funcion para que el jugador pueda disparar un proyectil
+    // llama a esta funcion para que el jugador pueda disparar un proyectil hacia donde el sprite este flippeado
 
     void Fire()
     {
-        // instanciar el proyectil en la posicion del jugador
-        GameObject bullet = Instantiate(bulletPrefab, shootController.transform.position, Quaternion.identity);
-        // asignar la velocidad del proyectil
-        bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(10f, 0f);
+        //Si el sprite esta flippeado, el proyectil se va a disparar hacia la izquierda y si no, se va a disparar hacia la derecha
+
+
+        if (sprite.flipX == true)
+        {
+            // instanciar el proyectil en la posicion del jugador
+            GameObject bullet = Instantiate(bulletPrefab, shootController.transform.position + Vector3.left, Quaternion.identity);
+            // asignar la velocidad del proyectil
+            bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(-10f, 0f);
+        }
+        else
+        {
+            // instanciar el proyectil en la posicion del jugador
+            GameObject bullet = Instantiate(bulletPrefab, shootController.transform.position + Vector3.right, Quaternion.identity);
+            // asignar la velocidad del proyectil
+            bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(10f, 0f);
+        }
     }
 }
