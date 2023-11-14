@@ -69,6 +69,17 @@
                 },
                 {
                     "name": "",
+                    "id": "b323c0cd-3d9c-47aa-9924-7f17b5e97771",
+                    "path": "<XInputController>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "b697706e-7f5e-44b5-b350-217d94d6132f",
                     "path": "<Keyboard>/space",
                     "interactions": "",
@@ -80,8 +91,30 @@
                 },
                 {
                     "name": "",
+                    "id": "1ce43fed-f37d-4fbd-b34f-6b4b3586ebfa",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "50a59a9b-6efc-4674-9799-117e9e1d6ff1",
                     "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "840d3ed0-3f92-4dc2-a587-fbb0c0d4e293",
+                    "path": "<XInputController>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
