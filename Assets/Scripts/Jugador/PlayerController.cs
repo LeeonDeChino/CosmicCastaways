@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            Fire();
+          Debug.Log("shoot");
         }
     }
 
