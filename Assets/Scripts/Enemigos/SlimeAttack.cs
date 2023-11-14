@@ -10,7 +10,7 @@ public class SlimeAttack : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<PlayerCombat>().TakeDamage(slimeDamage);
-            DesactivarObjeto();
+            //DesactivarObjeto();
 
         }
 

@@ -7,6 +7,7 @@ public class PlayerCombat : MonoBehaviour
     public int health;
     [SerializeField] private int maxHealth = 5;
     private bool isDead = false;
+    [SerializeField] private GameManager gameManager;
 
     private void Start()
     {
@@ -30,5 +31,6 @@ public class PlayerCombat : MonoBehaviour
         isDead = true;
         gameObject.SetActive(false);
         Debug.Log("Moriste");
+        gameManager.GameOver();
     }
 }
