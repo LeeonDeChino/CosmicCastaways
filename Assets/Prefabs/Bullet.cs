@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        // destruye la bala 
+        // destruye la bala depsues de 2 segundos
         Destroy(gameObject, 2f);
         
     }
