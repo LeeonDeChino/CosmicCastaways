@@ -158,9 +158,9 @@ Transform:
   - {fileID: 1135779741}
   - {fileID: 1378414595}
   - {fileID: 378110761}
+  - {fileID: 364298295}
   - {fileID: 736462241}
   - {fileID: 754715783}
-  - {fileID: 364298295}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &123827907
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 364298300}
   m_Layer: 0
   m_Name: Octopus
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
