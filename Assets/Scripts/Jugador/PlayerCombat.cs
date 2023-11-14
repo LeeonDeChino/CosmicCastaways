@@ -29,8 +29,12 @@ public class PlayerCombat : MonoBehaviour
     private void PlayerDeath()
     {
         isDead = true;
-        gameObject.SetActive(false);
-        Debug.Log("Moriste");
+        Invoke("DesactivarPlayer", 1f);
         gameManager.GameOver();
+    }
+
+    public void DesactivarPlayer()
+    {
+        gameObject.SetActive(false);
     }
 }
