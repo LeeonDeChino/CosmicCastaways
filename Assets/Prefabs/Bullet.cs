@@ -20,17 +20,15 @@ public class Bullet : MonoBehaviour
         // asigna el controlador de disparo
         shootController = GameObject.Find("ShootController");
         // asigna la velocidad de la bala
-        rb.velocity = transform.right * speed;
+        //rb.velocity = transform.right * speed;
     }
 
     // Update is called once per frame
 
     void Update()
     {
-        // destruye la bala si sale de la pantalla
-        if (transform.position.x > 10 || transform.position.x < -10)
-        {
-            Destroy(gameObject);
-        }
+        // destruye la bala depsues de 2 segundos
+        Destroy(gameObject, 2f);
+        
     }
 }
