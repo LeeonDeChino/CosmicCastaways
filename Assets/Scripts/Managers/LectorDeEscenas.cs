@@ -10,7 +10,7 @@ public class LectorDeEscenas : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void IniciarJuego()
+    public void StartGame()
     {
         SceneManager.LoadScene(1);
     }
