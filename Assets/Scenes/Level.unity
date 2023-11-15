@@ -2011,6 +2011,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04c468be4ef2b994abd1e7745e459dcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1135779739}
+  shootController: {fileID: 894028568}
 --- !u!1 &1090666289
 GameObject:
   m_ObjectHideFlags: 0
@@ -2754,7 +2756,7 @@ GameObject:
   - component: {fileID: 1477125463}
   m_Layer: 6
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3052,7 +3054,7 @@ GameObject:
   - component: {fileID: 2028096992}
   m_Layer: 6
   m_Name: SueloGeneral
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

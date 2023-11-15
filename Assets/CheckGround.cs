@@ -42,6 +42,7 @@ public class CheckGround : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         // si el checkground colisiona con el suelo, el jugador puede saltar y si esta en el aire no puede saltar
+
         if (collision.gameObject.tag == "Ground")
         {
             // el jugador no puede saltar
