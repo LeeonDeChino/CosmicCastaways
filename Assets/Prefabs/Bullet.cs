@@ -31,4 +31,15 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, 2f);
         
     }
+
+    // quiero que cuando la bala colisione con un enemigo, se destruya
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // si la bala colisiona con un enemigo, se destruye y le hace daño al enemigo
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

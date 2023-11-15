@@ -49,8 +49,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // agregar que pueda saltar con el boton space
-
     public void OnJump(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -63,7 +61,7 @@ public class PlayerController : MonoBehaviour
     {
         // SI isgrounded es true, activa la funcion de salto si no , no hace nada
 
-        if (isGrounded=true)
+        if (isGrounded)
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
