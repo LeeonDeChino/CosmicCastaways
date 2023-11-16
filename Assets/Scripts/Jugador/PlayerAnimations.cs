@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class PlayerAnimations : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Animator animator;
 
     // Update is called once per frame
     void Update()
     {
+        animator.SetFloat("speed", Mathf.Abs(Input.GetAxis("Horizontal")));
         
     }
 }
