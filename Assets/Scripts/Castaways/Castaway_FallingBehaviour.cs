@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Castaway_FallingBehaviour : StateMachineBehaviour
 {
-    private Transform castawayPos;
+    //private Transform castawayPos;
+    private Rigidbody2D rb;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        castawayPos = animator.GetComponent<Transform>();
-        castawayPos.position = new Vector3(castawayPos.position.x,castawayPos.position.y-1.25f,castawayPos.position.z);
+        //castawayPos = animator.GetComponent<Transform>();
+        //castawayPos.position = new Vector3(castawayPos.position.x,castawayPos.position.y-1.25f,castawayPos.position.z);
+        rb = animator.GetComponent<Rigidbody2D>();
+        rb.gravityScale = 1;
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
