@@ -11,6 +11,9 @@ public class Bullet : MonoBehaviour
     // crea una variable para el controlador de disparo
     private GameObject shootController;
 
+    public int bulletDamage = 1;
+ 
+
     // Start is called before the first frame update
 
     void Start()
@@ -34,12 +37,26 @@ public class Bullet : MonoBehaviour
 
     // quiero que cuando la bala colisione con un enemigo, se destruya
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         // si la bala colisiona con un enemigo, se destruye y le hace daño al enemigo
-        if (collision.gameObject.tag == "Enemy")
+        if (other.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
+            //other.GetComponent<Enemy>().EnemyTakeDamage(bulletDamage);
+            gameObject.SetActive(false);
         }
+        
+        if (other.CompareTag("MiniBoss"))
+        {
+            other.GetComponent<MinibossHealthManager>().TakeDamage(bulletDamage);
+            gameObject.SetActive(false);
+        }
+
+        /*
+         if (other.CompareTag("Obstacles"))
+        {
+            gameObject.SetActive(false);
+        }
+         */
     }
 }

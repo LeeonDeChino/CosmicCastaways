@@ -34,7 +34,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e7a4d89fd436f4e8ce57153d6e8ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castawaySpeed: 1.5
+  castawaySpeed: 1
 --- !u!1102 &-3570660286218370647
 AnimatorState:
   serializedVersion: 6

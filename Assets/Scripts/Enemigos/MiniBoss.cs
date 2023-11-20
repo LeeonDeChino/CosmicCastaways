@@ -6,9 +6,6 @@ public class MiniBoss : MonoBehaviour
 {
     public PlayerCombat playerScript;
     public Transform playerPos;
-   
-    public int health; 
-    private int maxHealth = 10;
 
     public bool isFlipped = false;
 
@@ -17,10 +14,7 @@ public class MiniBoss : MonoBehaviour
     public float attackRange = 1f;
     public LayerMask attackMask;
 
-    private void Start()
-    {
-        health = maxHealth;
-    }
+    public GameManager gameManager;
     void OnDrawGizmosSelected()
     {
         // Calcula la posición del punto de ataque
@@ -64,5 +58,10 @@ public class MiniBoss : MonoBehaviour
             transform.Rotate(0f, 180f, 0f);
             isFlipped = true;
         }
+    }
+
+    public void LiberarCastaway()
+    {
+        gameManager.LiberarCastaways(1);
     }
 }
