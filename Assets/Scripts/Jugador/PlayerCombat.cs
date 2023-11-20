@@ -8,16 +8,19 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private int maxHealth = 5;
     private bool isDead = false;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] BarraDeVidaPlayer barraDeVida;
 
     private void Start()
     {
         health = maxHealth;
+        barraDeVida.InicializarBarraDeVida(health);
     }
     public void TakeDamage(int damage)
     {
         if (!isDead)
         {
             health -= damage;
+            barraDeVida.CambiarVidaActual(health);
             Debug.Log("Ouch!");
 
         }
