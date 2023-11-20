@@ -2,27 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Castaway_FallingBehaviour : StateMachineBehaviour
+public class Castaway_WalkBehaviour : StateMachineBehaviour
 {
-    private Transform castawayPos;
-    public float distanciaAlSuelo = 1.25f;
+    Transform castawayPos;
+    public float castawaySpeed = 1.5f;
+    CastawayManager castawayManager;
    
-
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         castawayPos = animator.GetComponent<Transform>();
-        castawayPos.position = new Vector3(castawayPos.position.x, (castawayPos.position.y - distanciaAlSuelo), castawayPos.position.z);
-
-        //rb = animator.GetComponent<Rigidbody2D>();
-        //rb.gravityScale = 1;
+        castawayManager = animator.GetComponent<CastawayManager>(); 
+        castawayManager.DesactivarCastaway();     
     }
 
-    /*
-    //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
+    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        castawayPos.Translate(Vector2.left * castawaySpeed * Time.fixedDeltaTime);
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
@@ -30,5 +27,5 @@ public class Castaway_FallingBehaviour : StateMachineBehaviour
     {
         
     }
-    */
+
 }
