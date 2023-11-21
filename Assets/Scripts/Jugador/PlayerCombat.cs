@@ -40,4 +40,16 @@ public class PlayerCombat : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    //añadir vida al jugador
+
+    public void AddHealth(int healthToAdd)
+    {
+        health += healthToAdd;
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
+        barraDeVida.CambiarVidaActual(health);
+    }
 }

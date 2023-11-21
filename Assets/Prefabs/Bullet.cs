@@ -6,6 +6,8 @@ public class Bullet : MonoBehaviour
 {
     // crea una variable para la velocidad de la bala
     public float speed;
+    // crea una variable para el efecto de impacto
+    public GameObject impactEffect;
     // crea una variable para el rigidbody de la bala
     private Rigidbody2D rb;
     // crea una variable para el controlador de disparo
@@ -39,11 +41,16 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // si la bala colisiona con un enemigo, se destruye y le hace daño al enemigo
+        // si la bala colisiona con un enemigo, se destruye y se otorga un item
+
         if (other.CompareTag("Enemy"))
         {
-            //other.GetComponent<Enemy>().EnemyTakeDamage(bulletDamage);
+            // AGREGAR efecto de impacto solo cuando el enemigo muera usando el script Enemy Damage Effect
+            Instantiate(impactEffect, transform.position, transform.rotation);
+            // se destruye la bala
             gameObject.SetActive(false);
+            // se destruye el enemigo
+            other.gameObject.SetActive(false);
         }
         
         if (other.CompareTag("MiniBoss"))

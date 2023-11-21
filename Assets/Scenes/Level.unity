@@ -2332,6 +2332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c5e67a66cc2a34895b5d4421f41d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item: {fileID: 7607523581277114234, guid: 303faa24b9ca4f047be4f96ffe80967f, type: 3}
   health: 0
   maxHealth: 10
 --- !u!114 &714411604
@@ -4428,6 +4429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c5e67a66cc2a34895b5d4421f41d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item: {fileID: 0}
   health: 0
   maxHealth: 10
 --- !u!1 &2028096988

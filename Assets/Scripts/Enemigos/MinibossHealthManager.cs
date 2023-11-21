@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MinibossHealthManager : MonoBehaviour
 {
+    public GameObject item;
     public int health;
     public int maxHealth = 10;
     Animator miniBossAnimator;
@@ -33,6 +34,8 @@ public class MinibossHealthManager : MonoBehaviour
 
     private void MiniBossDeath()
     {
+        // instanciar el item
+        Instantiate(item, transform.position, transform.rotation);
         isDead = true;
         miniBossAnimator.SetTrigger("death");
     }
