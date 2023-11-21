@@ -162,12 +162,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 23621355}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7934954, y: 0.09903776, z: -0.10534738}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 123827906}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &123827905
 GameObject:
@@ -199,6 +199,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2066389334}
+  - {fileID: 23621357}
   - {fileID: 519420032}
   - {fileID: 1992027496}
   - {fileID: 1135779741}
@@ -213,7 +215,6 @@ Transform:
   - {fileID: 2011165212}
   - {fileID: 1586208970}
   - {fileID: 1902602533}
-  - {fileID: 2066389334}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &123827907
@@ -2611,6 +2612,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 894028569}
+  - component: {fileID: 894028570}
   m_Layer: 0
   m_Name: ControladorDisparo
   m_TagString: Untagged
@@ -2633,6 +2635,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1135779741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &894028570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894028568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22fc828665411f4a8247be9934e1c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootController: {fileID: 0}
+  bulletPrefab: {fileID: 0}
 --- !u!1 &965803057
 GameObject:
   m_ObjectHideFlags: 0
@@ -2645,7 +2661,7 @@ GameObject:
   - component: {fileID: 965803059}
   - component: {fileID: 965803060}
   m_Layer: 0
-  m_Name: cHECKgROUND
+  m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2724,7 +2740,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1135779739}
-  shootController: {fileID: 894028568}
 --- !u!1 &1024279678
 GameObject:
   m_ObjectHideFlags: 0
@@ -2934,11 +2949,11 @@ GameObject:
   - component: {fileID: 1135779745}
   - component: {fileID: 1135779744}
   - component: {fileID: 1135779748}
-  - component: {fileID: 1135779743}
-  - component: {fileID: 1135779747}
   - component: {fileID: 1135779742}
-  - component: {fileID: 1135779746}
+  - component: {fileID: 1135779747}
   - component: {fileID: 1135779749}
+  - component: {fileID: 1135779750}
+  - component: {fileID: 1135779751}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -3036,24 +3051,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1135779743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135779739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5580140156884594a8eb858788537421, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  jumpForce: 5
-  isGrounded: 1
-  sprite: {fileID: 0}
-  bulletPrefab: {fileID: 3736859075770069340, guid: f13bb76b9ec4e934d8459c6827c5c359, type: 3}
-  shootController: {fileID: 894028568}
 --- !u!70 &1135779744
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3116,88 +3113,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1135779746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135779739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: cf3b78bc3254c734aa0ec463ded7ebde, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1135779743}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnMove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 8a82a827-5614-46d2-a328-cbcddc752785
-    m_ActionName: Player/Movement
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1135779743}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnJump
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 3d7a9486-4d72-4c0f-953b-2eadb7813318
-    m_ActionName: Player/Jump[/Keyboard/space]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1135779743}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnShoot
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 3de5781a-5431-409d-8a3b-a5f2288ee167
-    m_ActionName: Player/Shoot[/Keyboard/f]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e7c15c1a-2f62-44ab-a3d6-885b5dd73fa0
-    m_ActionName: Player/Correr[/Keyboard/shift]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 519420031}
 --- !u!114 &1135779747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3240,8 +3155,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: {fileID: 2066389335}
+  shoot: {fileID: 0}
+  playerLookDirection: {fileID: 0}
   playerSpeed: 5
   jumpForce: 4
+  isGrounded: 0
+--- !u!114 &1135779750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135779739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22fc828665411f4a8247be9934e1c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootController: {fileID: 894028569}
+  bulletPrefab: {fileID: 0}
+--- !u!114 &1135779751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135779739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea88f39cf052fe84d899a64c2b1c92fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLookingRight: 1
 --- !u!1 &1138997723
 GameObject:
   m_ObjectHideFlags: 0
@@ -12772,7 +12717,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 123827906}
   - {fileID: 1477125464}
-  - {fileID: 1426947621}
   - {fileID: 1702027250}
   - {fileID: 637089756}
-  - {fileID: 23621357}
+  - {fileID: 1426947621}

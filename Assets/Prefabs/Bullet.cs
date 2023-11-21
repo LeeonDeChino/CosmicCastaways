@@ -59,11 +59,10 @@ public class Bullet : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        /*
-         if (other.CompareTag("Obstacles"))
+         if (other.CompareTag("Ground"))
         {
             gameObject.SetActive(false);
         }
-         */
+         
     }
 }
