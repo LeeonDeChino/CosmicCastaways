@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class MB_WalkBehaviour : StateMachineBehaviour
 {
-
     Transform player;
-    MiniBoss miniboss;
-    private Rigidbody2D minibossRB;
+    MB_LookAtPlayer lookDirection;
+    Rigidbody2D minibossRB;
+
     [SerializeField] float minibossSpeed = 2f;
     [SerializeField] float attackRange = 3f;
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        miniboss = animator.GetComponent<MiniBoss>();
+        lookDirection = animator.GetComponent<MB_LookAtPlayer>();
         minibossRB = animator.GetComponent<Rigidbody2D>();
-        player = miniboss.playerPos;
+        player = lookDirection.playerPos;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        miniboss.LookAtPlayer();
+        lookDirection.LookAtPlayer();
 
         Vector2 target = new Vector2(player.position.x, minibossRB.position.y);
         Vector2 newPos = Vector2.MoveTowards(minibossRB.position, target, minibossSpeed * Time.fixedDeltaTime);

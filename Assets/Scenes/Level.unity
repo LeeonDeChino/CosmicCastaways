@@ -213,6 +213,7 @@ Transform:
   - {fileID: 2011165212}
   - {fileID: 1586208970}
   - {fileID: 1902602533}
+  - {fileID: 2066389334}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &123827907
@@ -2177,6 +2178,7 @@ GameObject:
   - component: {fileID: 714411600}
   - component: {fileID: 714411603}
   - component: {fileID: 714411604}
+  - component: {fileID: 714411605}
   m_Layer: 0
   m_Name: MiniBoss
   m_TagString: MiniBoss
@@ -2285,8 +2287,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 1135779747}
-  playerPos: {fileID: 1135779741}
-  isFlipped: 0
   attackDamage: 2
   attackOffset: {x: -1.5, y: 0, z: 0}
   attackRange: 1
@@ -2393,6 +2393,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6554502a55105f46a194b90f0fd57dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &714411605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714411596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2411c6f574b7e174cba8865ea175adc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPos: {fileID: 1135779741}
+  isFlipped: 0
 --- !u!1 &736462240
 GameObject:
   m_ObjectHideFlags: 0
@@ -2924,6 +2938,7 @@ GameObject:
   - component: {fileID: 1135779747}
   - component: {fileID: 1135779742}
   - component: {fileID: 1135779746}
+  - component: {fileID: 1135779749}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -3212,6 +3227,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1135779742}
+--- !u!114 &1135779749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135779739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19eba050f09dabd479cb1435a64c2414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 2066389335}
+  playerSpeed: 5
+  jumpForce: 4
 --- !u!1 &1138997723
 GameObject:
   m_ObjectHideFlags: 0
@@ -4284,6 +4314,8 @@ GameObject:
   - component: {fileID: 2011165209}
   - component: {fileID: 2011165214}
   - component: {fileID: 2011165213}
+  - component: {fileID: 2011165215}
+  - component: {fileID: 2011165216}
   m_Layer: 0
   m_Name: MiniBoss2
   m_TagString: MiniBoss
@@ -4368,7 +4400,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.2064991, y: 0.04520929}
@@ -4475,9 +4507,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c5e67a66cc2a34895b5d4421f41d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
+  item: {fileID: 7607523581277114234, guid: 303faa24b9ca4f047be4f96ffe80967f, type: 3}
   health: 0
   maxHealth: 10
+--- !u!114 &2011165215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011165206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36facf371af2d1643aef7191356180f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 123827907}
+--- !u!114 &2011165216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011165206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2411c6f574b7e174cba8865ea175adc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPos: {fileID: 1135779741}
+  isFlipped: 0
 --- !u!1 &2028096988
 GameObject:
   m_ObjectHideFlags: 0
@@ -12631,6 +12690,51 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!1 &2066389333
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2066389334}
+  - component: {fileID: 2066389335}
+  m_Layer: 0
+  m_Name: InputReader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2066389334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066389333}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 123827906}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2066389335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066389333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42eb368ada23a4ebcef830f0042f07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 0
 --- !u!1 &2136723873
 GameObject:
   m_ObjectHideFlags: 0

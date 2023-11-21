@@ -5,10 +5,6 @@ using UnityEngine;
 public class MiniBoss : MonoBehaviour
 {
     public PlayerCombat playerScript;
-    public Transform playerPos;
-
-    public bool isFlipped = false;
-
     public int attackDamage = 2;
     public Vector3 attackOffset;
     public float attackRange = 1f;
@@ -40,24 +36,6 @@ public class MiniBoss : MonoBehaviour
             Debug.Log("Boss Hit");
         }
         
-    }
-    public void LookAtPlayer()
-    {
-        Vector3 flipped = transform.localScale;
-        flipped.z *= -1f;
-
-        if(transform.position.x > playerPos.position.x && isFlipped)
-        {
-            transform.localScale = flipped;
-            transform.Rotate(0f, 180f, 0f);
-            isFlipped = false;
-        }
-        else if (transform.position.x < playerPos.position.x && !isFlipped)
-        {
-            transform.localScale = flipped;
-            transform.Rotate(0f, 180f, 0f);
-            isFlipped = true;
-        }
     }
 
     public void LiberarCastaway()
