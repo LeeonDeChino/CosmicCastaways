@@ -231,9 +231,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 1702027249}
-  pauseCanvas: {fileID: 509359850}
-  hudCanvas: {fileID: 637089755}
-  arduinoInput: {fileID: 2066389335}
+  pauseCanvas: {fileID: 0}
+  hudCanvas: {fileID: 0}
+  arduinoInput: {fileID: 0}
   castaway: {fileID: 1024279680}
   castaway2: {fileID: 1902602536}
   castaway3: {fileID: 0}
@@ -295,7 +295,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70faf26bbc28b6b43845992cdf44ea38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadMovimiento: {x: 0.1, y: 0}
+  velocidadMovimiento: {x: 0.6, y: 0}
+  jugador: {fileID: 1135779745}
+  input: {fileID: 2066389335}
 --- !u!212 &177840227
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2289,7 +2291,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70faf26bbc28b6b43845992cdf44ea38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadMovimiento: {x: 0.2, y: 0}
+  velocidadMovimiento: {x: 2.6, y: 0}
+  jugador: {fileID: 1135779745}
+  input: {fileID: 2066389335}
 --- !u!212 &681943206
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2649,7 +2653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c5e67a66cc2a34895b5d4421f41d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 7607523581277114234, guid: 303faa24b9ca4f047be4f96ffe80967f, type: 3}
+  item: {fileID: 0}
   health: 0
   maxHealth: 10
 --- !u!114 &714411604
@@ -2820,7 +2824,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70faf26bbc28b6b43845992cdf44ea38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadMovimiento: {x: 0.15, y: 0}
+  velocidadMovimiento: {x: 2, y: 0}
+  jugador: {fileID: 1135779745}
+  input: {fileID: 2066389335}
 --- !u!212 &853270906
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3530,7 +3536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1135779742}
-  input: {fileID: 2066389335}
+  input: {fileID: 0}
 --- !u!114 &1135779749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5183,7 +5189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c5e67a66cc2a34895b5d4421f41d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 7607523581277114234, guid: 303faa24b9ca4f047be4f96ffe80967f, type: 3}
+  item: {fileID: 0}
   health: 0
   maxHealth: 10
 --- !u!114 &2011165215

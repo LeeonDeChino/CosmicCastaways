@@ -9,16 +9,18 @@ public class FondoMovimiento : MonoBehaviour
     private Vector2 offset;
     private Material material;
 
-    //public Rigidbody2D jugador;
+    public Rigidbody2D jugador;
+    public ArduinoInput input;
    
 
     private void Awake()
     {
         material = GetComponent<SpriteRenderer>().material;
+
     }
     void Update()
     {
-        offset = velocidadMovimiento * Time.deltaTime;
+        offset = (input.value * 0.1f) * velocidadMovimiento * Time.deltaTime;
         material.mainTextureOffset += offset;
     }
 }
