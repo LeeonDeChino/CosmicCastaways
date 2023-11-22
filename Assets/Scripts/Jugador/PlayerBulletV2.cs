@@ -24,9 +24,9 @@ public class PlayerBulletV2 : MonoBehaviour
     {
         StartCoroutine(DesactivarTiempo());
         playerLookDirection = FindObjectOfType<PlayerLookDirection>();
+        SetBulletDirection();
     }
-
-    void Update()
+    private void SetBulletDirection()
     {
         isLookingLeft = !playerLookDirection.isLookingRight;
 
@@ -38,7 +38,9 @@ public class PlayerBulletV2 : MonoBehaviour
         {
             direction = Vector2.right;
         }
-
+    }
+    void Update()
+    {
         transform.Translate(bulletSpeed * Time.deltaTime * direction);
     }
 

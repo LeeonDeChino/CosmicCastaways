@@ -8,6 +8,11 @@ public class DisparoV2 : MonoBehaviour
     public Transform shootController;
 
     public PlayerBulletV2 bulletPrefab;
+    [SerializeField] private float cooldown;
+    private float tiempoSiguienteDisparo = 0;
+
+    public ArduinoInput arduinoInput;
+    private int input;
     
 
     private ObjectPool<PlayerBulletV2> bulletPool;
@@ -33,10 +38,30 @@ public class DisparoV2 : MonoBehaviour
         }, true, 10, 25);
     }
 
+    private void Update()
+    {
+        
+        if (tiempoSiguienteDisparo > 0)
+        {
+            tiempoSiguienteDisparo -= Time.deltaTime;
+        }
+
+        //Detecta cuando se presiona el botón.
+        input = arduinoInput.value;
+        if (input == 3)
+        {
+            if (tiempoSiguienteDisparo <= 0)
+            {
+                Disparar();
+                tiempoSiguienteDisparo = cooldown;
+            }
+        }
+
+    }
     public void Disparar()
     {
         bulletPool.Get();
-        //sonido
+        //sonido disparo
     }
 
     private void DesactivarBalaPool(PlayerBulletV2 bullet)

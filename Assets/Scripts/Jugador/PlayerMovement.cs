@@ -5,10 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public ArduinoInput input;
-    public DisparoV2 shoot;
-    public PlayerLookDirection playerLookDirection;
-
     private int val;
+    PlayerLookDirection playerLookDirection;
+  
     [SerializeField] float playerSpeed = 5f;
     Rigidbody2D playerRB;
     [SerializeField] float jumpForce = 4f;
@@ -18,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         playerRB = GetComponent<Rigidbody2D>(); 
+        playerLookDirection = GetComponent<PlayerLookDirection>();
     }
 
     private void FixedUpdate()
@@ -41,11 +41,6 @@ public class PlayerMovement : MonoBehaviour
             Jump();
         }
 
-        //DISPARO
-        if (val == 3)
-        {
-            shoot.Disparar();
-        }
     }
 
     void Move()

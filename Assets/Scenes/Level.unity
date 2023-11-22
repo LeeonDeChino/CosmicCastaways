@@ -3544,8 +3544,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: {fileID: 2066389335}
-  shoot: {fileID: 0}
-  playerLookDirection: {fileID: 0}
   playerSpeed: 5
   jumpForce: 4
   isGrounded: 0
@@ -3563,6 +3561,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootController: {fileID: 894028569}
   bulletPrefab: {fileID: 983293187696582625, guid: f13bb76b9ec4e934d8459c6827c5c359, type: 3}
+  cooldown: 0.2
+  arduinoInput: {fileID: 2066389335}
 --- !u!114 &1135779751
 MonoBehaviour:
   m_ObjectHideFlags: 0
