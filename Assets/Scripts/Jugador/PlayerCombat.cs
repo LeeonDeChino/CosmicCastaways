@@ -14,6 +14,7 @@ public class PlayerCombat : MonoBehaviour
     {
         health = maxHealth;
         barraDeVida.InicializarBarraDeVida(health);
+        AudioManager.instance.PlaySound(0);
     }
     public void TakeDamage(int damage)
     {
@@ -34,6 +35,7 @@ public class PlayerCombat : MonoBehaviour
         isDead = true;
         Invoke("DesactivarPlayer", 1f);
         gameManager.GameOver();
+        AudioManager.instance.PlaySound(1);
     }
 
     public void DesactivarPlayer()
