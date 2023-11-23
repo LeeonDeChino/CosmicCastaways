@@ -5,27 +5,38 @@ using UnityEngine;
 public class PlayerAnimations : MonoBehaviour
 {
     public Animator animator;
+    PlayerMovement player;
+    private bool isGrounded;
     public ArduinoInput input;
+    private int joystickV;
 
     // Update is called once per frame
+
+    private void Awake()
+    {
+        player = GetComponent<PlayerMovement>();
+    }
     void Update()
     {
-        animator.SetFloat("speed", Mathf.Abs(Input.GetAxisRaw("Horizontal")));
-        if (input.value != 0 && input.value < 2)
-        {
-            animator.SetBool("moving", true);
-        }
-        else
+        joystickV = input.joystickValue;
+
+        isGrounded = player.isGrounded;
+
+        animator.SetBool("isFalling", !isGrounded);
+
+        if (joystickV >= 480 && joystickV <= 500)
         {
             animator.SetBool("moving", false);
         }
-        if(input.value == 2)
+        else
         {
-            //salto
+            animator.SetBool("moving", true);
         }
-        if (input.value == 3)
-        {
-            //disparo
-        }
+        
+    }
+
+    public void TriggerJump()
+    {
+        animator.SetTrigger("jump");
     }
 }

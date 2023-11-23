@@ -231,9 +231,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 1702027249}
-  pauseCanvas: {fileID: 0}
-  hudCanvas: {fileID: 0}
-  arduinoInput: {fileID: 0}
+  pauseCanvas: {fileID: 509359850}
+  hudCanvas: {fileID: 637089755}
+  arduinoInput: {fileID: 2066389335}
   castaway: {fileID: 1024279680}
   castaway2: {fileID: 1902602536}
   castaway3: {fileID: 0}
@@ -3536,7 +3536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1135779742}
-  input: {fileID: 0}
+  input: {fileID: 2066389335}
 --- !u!114 &1135779749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3551,7 +3551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 2066389335}
   playerSpeed: 5
-  jumpForce: 4
+  jumpForce: 7
   isGrounded: 0
 --- !u!114 &1135779750
 MonoBehaviour:
@@ -13416,6 +13416,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc42eb368ada23a4ebcef830f0042f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  joystickValue: 0
+  buttonValue: 0
+  button2Value: 0
+  button3Value: 0
   value: 0
 --- !u!1 &2136723873
 GameObject:

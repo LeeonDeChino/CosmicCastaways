@@ -20,7 +20,11 @@ public class FondoMovimiento : MonoBehaviour
     }
     void Update()
     {
-        offset = (input.value * 0.1f) * velocidadMovimiento * Time.deltaTime;
-        material.mainTextureOffset += offset;
+        if(input.value == 1 || input.value == -1)
+        {
+            offset = (input.value * 0.1f) * velocidadMovimiento * Time.deltaTime;
+            material.mainTextureOffset += offset;
+        }
+        
     }
 }
