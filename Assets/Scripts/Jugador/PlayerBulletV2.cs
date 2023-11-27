@@ -48,8 +48,7 @@ public class PlayerBulletV2 : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            //other.GetComponent<Enemy>().EnemyTakeDamage(damage);
-            other.gameObject.SetActive(false);
+            other.GetComponent<EnemyHealthManager>().TakeDamage(damage);
             desactivarAccion(this);
         }
         if (other.CompareTag("Ground"))

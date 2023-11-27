@@ -10,20 +10,30 @@ public class SlimeMovement : MonoBehaviour
 
     private int direccion = 1;
 
+    EnemyHealthManager enemyScript;
+    private bool isDead = false;
+
+    private void Start()
+    {
+        enemyScript = GetComponent<EnemyHealthManager>();
+    }
     private void Update()
     {
+        isDead = enemyScript.isDead;
 
-        transform.Translate(Vector2.right * direccion * velocidadSlime * Time.deltaTime);
-
-        if (transform.position.x >= limiteDerecho.position.x)
+        if (!isDead)
         {
-            CambiarDireccion(-1);
-        }
-        else if (transform.position.x <= limiteIzquierdo.position.x)
-        {
-            CambiarDireccion(1);
-        }
+            transform.Translate(Vector2.right * direccion * velocidadSlime * Time.deltaTime);
 
+            if (transform.position.x >= limiteDerecho.position.x)
+            {
+                CambiarDireccion(-1);
+            }
+            else if (transform.position.x <= limiteIzquierdo.position.x)
+            {
+                CambiarDireccion(1);
+            }
+        }
     }
 
     private void CambiarDireccion(int nuevaDireccion)

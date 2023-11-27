@@ -10,19 +10,32 @@ public class OctopusMovement : MonoBehaviour
 
     private int direccion = 1;
 
+    EnemyHealthManager enemyScript;
+    private bool isDead = false;
+
+    private void Start()
+    {
+        enemyScript = GetComponent<EnemyHealthManager>();
+    }
+
     private void Update()
     {
+        isDead = enemyScript.isDead;
 
-        transform.Translate(Vector2.up * direccion * velocidadOctopus * Time.deltaTime);
+        if (!isDead)
+        {
+            transform.Translate(Vector2.up * direccion * velocidadOctopus * Time.deltaTime);
 
-        if (transform.position.y >= limiteArriba.position.y)
-        {
-            CambiarDireccion(-1);
+            if (transform.position.y >= limiteArriba.position.y)
+            {
+                CambiarDireccion(-1);
+            }
+            else if (transform.position.y <= limiteAbajo.position.y)
+            {
+                CambiarDireccion(1);
+            }
         }
-        else if (transform.position.y <= limiteAbajo.position.y)
-        {
-            CambiarDireccion(1);
-        }
+          
 
     }
 

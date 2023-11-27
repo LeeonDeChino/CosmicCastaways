@@ -9,20 +9,31 @@ public class CrabMovement : MonoBehaviour
     public Transform limiteDerecho;
 
     private int direccion = 1;
+    EnemyHealthManager enemyScript;
+    private bool isDead = false;
 
+    private void Start()
+    {
+        enemyScript = GetComponent<EnemyHealthManager>();
+    }
     private void Update()
     {
+        isDead = enemyScript.isDead;
 
-        transform.Translate(Vector2.right * direccion * velocidadCrab * Time.deltaTime);
+        if (!isDead)
+        {
+            transform.Translate(Vector2.right * direccion * velocidadCrab * Time.deltaTime);
 
-        if (transform.position.x >= limiteDerecho.position.x)
-        {
-            CambiarDireccion(-1);
+            if (transform.position.x >= limiteDerecho.position.x)
+            {
+                CambiarDireccion(-1);
+            }
+            else if (transform.position.x <= limiteIzquierdo.position.x)
+            {
+                CambiarDireccion(1);
+            }
         }
-        else if (transform.position.x <= limiteIzquierdo.position.x)
-        {
-            CambiarDireccion(1);
-        }
+            
 
     }
 

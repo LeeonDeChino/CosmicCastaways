@@ -4,20 +4,27 @@ using UnityEngine;
 
 public class MiniBoss3 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameManager gameManager;
+
+    public Transform player;
+    public float range;
+    public float shootRange;
+
+    public GameObject bulletPrefab;
+    public Transform shootPoint;
+
+    public void Shoot()
     {
-        
+        Instantiate(bulletPrefab,shootPoint.position,Quaternion.identity);  
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnDrawGizmosSelected()
     {
-        
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position,range);
+        Gizmos.DrawWireSphere(transform.position, shootRange);
     }
-
-    public void MB3Shoot()
+    public void LiberarCastaway()
     {
-
+        gameManager.LiberarCastaways(3);
     }
 }

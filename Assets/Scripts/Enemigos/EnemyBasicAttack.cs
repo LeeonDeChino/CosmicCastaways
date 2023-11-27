@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlimeAttack : MonoBehaviour
+public class EnemyBasicAttack : MonoBehaviour
 {
     public int enemyDamage = 1;
     public float attackCooldown = 1.5f;
