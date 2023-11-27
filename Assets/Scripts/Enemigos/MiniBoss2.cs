@@ -5,6 +5,8 @@ using UnityEngine;
 public class MiniBoss2 : MonoBehaviour
 {
     public GameManager gameManager;
+    public GameObject bulletPrefab;
+    public Transform shootPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -21,5 +23,9 @@ public class MiniBoss2 : MonoBehaviour
     public void LiberarCastaway()
     {
         gameManager.LiberarCastaways(2);
+    }
+    public void Shoot()
+    {
+        Instantiate(bulletPrefab,shootPoint.position,Quaternion.identity);
     }
 }
