@@ -8,15 +8,11 @@ public class EnemyBullet : MonoBehaviour
     public float bulletSpeed = 5f;
     Rigidbody2D bulletRB;
     [SerializeField] private int bulletDamage = 2;
-    //MB_LookAtPlayer direction;
-    //private bool lookingRight;
     private SpriteRenderer sprite;
     private void OnEnable()
     {
         bulletRB = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<PlayerCombat>();
-        //direction = FindObjectOfType<MB_LookAtPlayer>();
-        //sprite = GetComponent<SpriteRenderer>();
         Vector2 moveDir = (player.transform.position - transform.position).normalized*bulletSpeed;
         bulletRB.velocity = new Vector2(moveDir.x, moveDir.y);
         Invoke("DesactivarBala", 2f);
@@ -38,20 +34,6 @@ public class EnemyBullet : MonoBehaviour
         if (other.CompareTag("Ground"))
         {
             DesactivarBala();
-        }
-        
+        }     
     }
-    /*private void Update()
-    {
-        lookingRight = direction.isFlipped;
-
-        if (!lookingRight)
-        {
-            sprite.flipX = true;
-        }
-        else
-        {
-            sprite.flipX = false;
-        }
-    }*/
 }

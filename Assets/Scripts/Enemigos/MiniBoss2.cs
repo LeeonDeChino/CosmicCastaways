@@ -8,18 +8,6 @@ public class MiniBoss2 : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform shootPoint;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void LiberarCastaway()
     {
         gameManager.LiberarCastaways(2);
