@@ -47,6 +47,8 @@ public class Bullet : MonoBehaviour
         {
             // AGREGAR efecto de impacto solo cuando el enemigo muera usando el script Enemy Damage Effect
             Instantiate(impactEffect, transform.position, transform.rotation);
+            //agrega un sonido del audio manager
+            AudioManager.instance.PlaySound(3);
             // se destruye la bala
             gameObject.SetActive(false);
             // se destruye el enemigo
