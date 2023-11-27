@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PauseManager : MonoBehaviour
 {
-    public Button continueButton;
+   /* public Button continueButton;
     public Button quitButton;
     private int input;
     public ArduinoInput arduinoInput;
@@ -34,5 +34,5 @@ public class PauseManager : MonoBehaviour
                 quitButton.onClick.Invoke();
             }
         }
-    }
+    }*/
 }

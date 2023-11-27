@@ -22,8 +22,6 @@ public class PlayerCombat : MonoBehaviour
         {
             health -= damage;
             barraDeVida.CambiarVidaActual(health);
-            Debug.Log("Ouch!");
-
         }
         if (health <= 0 && !isDead)
         {

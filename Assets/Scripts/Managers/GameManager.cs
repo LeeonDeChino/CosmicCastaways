@@ -5,15 +5,15 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public Canvas gameOverCanvas;
-    public GameObject pauseCanvas;
-    public Canvas hudCanvas;
-    public ArduinoInput arduinoInput;
-    private int input;
+    //public GameObject pauseCanvas;
+    //public Canvas hudCanvas;
+    //public ArduinoInput arduinoInput;
+    //private int input;
     public Animator castaway, castaway2, castaway3;
     public int castawayCount = 0;
-    private bool enPausa = false;
+    //private bool enPausa = false;
 
-    private void Update()
+    /*private void Update()
     {
         input = arduinoInput.value;
 
@@ -21,8 +21,8 @@ public class GameManager : MonoBehaviour
         {
             Pausar();
         }
-    }
-    private void Pausar()
+    }*/
+   /* private void Pausar()
     {
         enPausa = true;
         Time.timeScale = 0;
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         enPausa = false;
         pauseCanvas.SetActive(false);
         hudCanvas.enabled = true;
-    }
+    }*/
     public void LiberarCastaways(int i)
     {
         castawayCount++;      

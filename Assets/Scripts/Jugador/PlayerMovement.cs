@@ -26,13 +26,11 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         //Este es el valor que recibimos del Arduino en el script de ArduinoInput.
-        //val = input.value;
-        //Debug.Log(val);
+        
         val = input.joystickValue;
         jumpButtonVal = input.buttonValue;
 
-        //DIRECCIÓN
-        playerLookDirection.LookDirection(val);
+       
 
         //MOVIMIENTO
         Move();
@@ -51,16 +49,18 @@ public class PlayerMovement : MonoBehaviour
         if(val <= 450)
         {
             transform.Translate(Vector3.left * Time.fixedDeltaTime * playerSpeed);
+            playerLookDirection.LookDirection(-1);
         }
         else if (val >= 530)
         {
             transform.Translate(Vector3.right * Time.fixedDeltaTime * playerSpeed);
+            playerLookDirection.LookDirection(1);
         }
-        /*else
+        else
         {
-            //transform.Translate(new Vector3(0,transform.position.y, transform.position.z) * Time.fixedDeltaTime);
-           
-        }*/
+            playerLookDirection.LookDirection(1);
+
+        }
 
     }
     void Jump()

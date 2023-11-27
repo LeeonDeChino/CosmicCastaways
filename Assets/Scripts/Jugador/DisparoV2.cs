@@ -47,8 +47,8 @@ public class DisparoV2 : MonoBehaviour
         }
 
         //Detecta cuando se presiona el botón.
-        input = arduinoInput.value;
-        if (input == 3)
+        input = arduinoInput.button2Value;
+        if (input == 1)
         {
             if (tiempoSiguienteDisparo <= 0)
             {
