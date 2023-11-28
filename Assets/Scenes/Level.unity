@@ -156,6 +156,10 @@ MonoBehaviour:
   sourceAudio: {fileID: 23621358}
   Track4: {fileID: 8300000, guid: 51a4f1157b7ff1449b5e5cf064d584c7, type: 3}
   laser_01: {fileID: 8300000, guid: 4310474905e266640852f43bd609a1a4, type: 3}
+  losegameover: {fileID: 8300000, guid: 59ceeff8ab94d1f47b55c102760a6cc4, type: 3}
+  DoorLock22: {fileID: 8300000, guid: 8313741d5c98ad045a4b36782062c1f4, type: 3}
+  magic03: {fileID: 8300000, guid: 5e1a9f876d3dafd47bc6b3dde25135fa, type: 3}
+  mosnterscream57: {fileID: 8300000, guid: 423017d00c638b84eb736467289f6363, type: 3}
 --- !u!4 &23621357
 Transform:
   m_ObjectHideFlags: 0

@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour
         if (isGrounded)
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            AudioManager.instance.PlayJump();
         }
     }
 

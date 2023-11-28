@@ -26,6 +26,7 @@ public class EnemyHealthManager : MonoBehaviour
             if (health <= 0f)
             {
                 EnemyDeath();
+                AudioManager.instance.PlayMagic();
             }
         }
 

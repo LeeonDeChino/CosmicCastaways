@@ -34,7 +34,7 @@ public class PlayerCombat : MonoBehaviour
         isDead = true;
         Invoke("DesactivarPlayer", 1f);
         gameManager.GameOver();
-       // sonido
+        AudioManager.instance.PlayLose();
     }
 
     public void DesactivarPlayer()

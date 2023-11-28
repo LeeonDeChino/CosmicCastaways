@@ -27,6 +27,7 @@ public class MinibossHealthManager : MonoBehaviour
             if (health <= 0f)
             {
                 MiniBossDeath();
+                AudioManager.instance.PlayMonster();
             }
         }  
 
