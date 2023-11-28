@@ -5,7 +5,7 @@ using System.IO.Ports;
 
 public class ArduinoInput : MonoBehaviour
 {
-    public SerialPort sp = new SerialPort("COM8", 9600);
+    public SerialPort sp = new SerialPort("COM5", 9600);
     public int joystickValue,buttonValue,button2Value,button3Value;
     public int value;
 

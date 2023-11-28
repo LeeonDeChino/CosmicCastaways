@@ -46,12 +46,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        if(val <= 450)
+        if(val == -1)
         {
             transform.Translate(Vector3.left * Time.fixedDeltaTime * playerSpeed);
             playerLookDirection.LookDirection(-1);
         }
-        else if (val >= 530)
+        else if (val == 1)
         {
             transform.Translate(Vector3.right * Time.fixedDeltaTime * playerSpeed);
             playerLookDirection.LookDirection(1);
