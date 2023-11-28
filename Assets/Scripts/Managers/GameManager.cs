@@ -7,9 +7,13 @@ public class GameManager : MonoBehaviour
     public Canvas gameOverCanvas;
     public Canvas winCanvas;
     public Canvas hudCanvas;
+    public GameObject buttonNavegation;
     
     public Animator castaway, castaway2, castaway3;
     public int castawayCount = 0;
+
+    public bool isGameOver = false;
+    public bool isCompleted = false;
     
     public void LiberarCastaways(int i)
     {
@@ -32,11 +36,16 @@ public class GameManager : MonoBehaviour
    {
         gameOverCanvas.enabled = true;
         hudCanvas.enabled = false;
+        isGameOver = true;
+        buttonNavegation.SetActive(true);
+        
    }
 
    public void LevelCompleted()
    {
         winCanvas.enabled = true;
         hudCanvas.enabled = false;
+        isCompleted = true;
+        buttonNavegation.SetActive(true);
     }
 }
