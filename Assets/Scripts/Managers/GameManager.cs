@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
         isGameOver = true;
         buttonNavegation.SetActive(true);
         
+        
    }
 
    public void LevelCompleted()
