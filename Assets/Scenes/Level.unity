@@ -3542,6 +3542,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 983293187696582625, guid: f13bb76b9ec4e934d8459c6827c5c359, type: 3}
   cooldown: 0.4
   arduinoInput: {fileID: 2066389335}
+  player: {fileID: 1135779748}
 --- !u!114 &1135779751
 MonoBehaviour:
   m_ObjectHideFlags: 0

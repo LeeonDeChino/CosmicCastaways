@@ -42,7 +42,9 @@ public class PlayerAnimations : MonoBehaviour
 
     public void DisparoAnimacion()
     {
-        if(input.button2Value == 1)
+        if (input.button2Value == 1)
             animator.SetFloat("disparando", 1);
+        else
+            animator.SetFloat("disparando", 0);
     }
 }
