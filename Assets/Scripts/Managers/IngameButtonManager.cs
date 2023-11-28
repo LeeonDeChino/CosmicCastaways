@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class IngameButtonManager : MonoBehaviour
 {
     ArduinoInput input;
+    ControllerInput controllerInput;
     public Button playButtonGO;
     public Button quitButtonGO;
     public Button playButtonW;
@@ -17,6 +18,7 @@ public class IngameButtonManager : MonoBehaviour
     private void OnEnable()
     {
         input = FindObjectOfType<ArduinoInput>();
+        controllerInput = FindObjectOfType<ControllerInput>();
         gameManager = FindObjectOfType<GameManager>();
         navegando = true;
     }
@@ -25,22 +27,22 @@ public class IngameButtonManager : MonoBehaviour
     {
         if (navegando && gameManager.isGameOver)
         {
-            if (input.buttonValue == 1)
+            if (input.buttonValue == 1 || controllerInput.boton1 == 1)
             {
                 playButtonGO.onClick.Invoke();
             }
-            if (input.button2Value == 1)
+            if (input.button2Value == 1 || controllerInput.boton2 == 1)
             {
                 quitButtonGO.onClick.Invoke();
             }
         }
         else if (navegando && gameManager.isCompleted)
         {
-            if (input.buttonValue == 1)
+            if (input.buttonValue == 1 || controllerInput.boton1 == 1)
             {
                 playButtonW.onClick.Invoke();
             }
-            if (input.button2Value == 1)
+            if (input.button2Value == 1 || controllerInput.boton2 == 1)
             {
                 quitButtonW.onClick.Invoke();
             }

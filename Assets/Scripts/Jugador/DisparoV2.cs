@@ -13,6 +13,8 @@ public class DisparoV2 : MonoBehaviour
 
     public ArduinoInput arduinoInput;
     private int input;
+    public ControllerInput controllerInput;
+    private float botonDisparo;
 
     public PlayerAnimations player;
     
@@ -50,7 +52,8 @@ public class DisparoV2 : MonoBehaviour
 
         //Detecta cuando se presiona el botón.
         input = arduinoInput.button2Value;
-        if (input == 1)
+        botonDisparo = controllerInput.boton2;
+        if (input == 1 || botonDisparo == 1)
         {
             if (tiempoSiguienteDisparo <= 0)
             {

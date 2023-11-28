@@ -5,8 +5,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public ArduinoInput input;
+    public ControllerInput controllerInput;
     private int val;
     private int jumpButtonVal;
+    float axisH;
+    float botonSalto;
     PlayerLookDirection playerLookDirection;
     PlayerAnimations playerAnimations;
   
@@ -14,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D playerRB;
     [SerializeField] float jumpForce = 4f;
     public bool isGrounded;
+    
     
 
     private void Start()
@@ -25,11 +29,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //Este es el valor que recibimos del Arduino en el script de ArduinoInput.
-        
+        //Este es el valor que recibimos del Arduino en el script de ArduinoInput.        
         val = input.joystickValue;
         jumpButtonVal = input.buttonValue;
 
+        //Este es el valor que recibimos del input del Control en el script ControllerInput.
+        axisH = controllerInput.axisH;
+        botonSalto = controllerInput.boton1;
        
 
         //MOVIMIENTO
@@ -37,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
         
 
         //SALTO
-        if (jumpButtonVal == 1)
+        if (jumpButtonVal == 1 || botonSalto == 1)
         {
             Jump();
         }
@@ -46,12 +52,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        if(val == -1)
+        if(val == -1 || axisH < 0)
         {
             transform.Translate(Vector3.left * Time.fixedDeltaTime * playerSpeed);
             playerLookDirection.LookDirection(-1);
         }
-        else if (val == 1)
+        else if (val == 1 || axisH > 0)
         {
             transform.Translate(Vector3.right * Time.fixedDeltaTime * playerSpeed);
             playerLookDirection.LookDirection(1);

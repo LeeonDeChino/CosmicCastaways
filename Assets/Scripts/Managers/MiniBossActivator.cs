@@ -12,7 +12,7 @@ public class MiniBossActivator : MonoBehaviour
         {
             minibossAnimator.SetTrigger("activate");
             gameObject.SetActive(false);
-            Debug.Log("Checkpoint");
+            Debug.Log("Boss Activado");
         }
     }
 }
