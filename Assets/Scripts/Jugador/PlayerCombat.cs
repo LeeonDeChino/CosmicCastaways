@@ -9,6 +9,7 @@ public class PlayerCombat : MonoBehaviour
     private bool isDead = false;
     [SerializeField] private GameManager gameManager;
     [SerializeField] BarraDeVidaPlayer barraDeVida;
+    public GameObject errorMessage;
 
     private void Start()
     {
@@ -61,7 +62,22 @@ public class PlayerCombat : MonoBehaviour
         }
         if (other.CompareTag("Meta"))
         {
-            gameManager.LevelCompleted();
+            if (gameManager.castawayCount == 3)
+            {
+                gameManager.LevelCompleted();
+            }
+            else
+            {
+                errorMessage.SetActive(true);
+            }
+            
+        }
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Meta") && errorMessage.activeInHierarchy)
+        {
+            errorMessage.SetActive(false);
         }
     }
 }
