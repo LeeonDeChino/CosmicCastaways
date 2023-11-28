@@ -24,7 +24,7 @@ public class PlayerAnimations : MonoBehaviour
 
         animator.SetBool("isFalling", !isGrounded);
 
-        if (joystickV >= 480 && joystickV <= 500)
+        if (joystickV == 0)
         {
             animator.SetBool("moving", false);
         }
