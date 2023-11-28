@@ -27,6 +27,7 @@ public class PlayerAnimations : MonoBehaviour
         if (joystickV == 0)
         {
             animator.SetBool("moving", false);
+            DisparoQuieto();
         }
         else
         {
@@ -46,5 +47,13 @@ public class PlayerAnimations : MonoBehaviour
             animator.SetFloat("disparando", 1);
         else
             animator.SetFloat("disparando", 0);
+    }
+
+    public void DisparoQuieto()
+    {
+        if (input.button2Value == 1)
+            animator.SetFloat("disparoQuieto", 1);
+        else
+            animator.SetFloat("disparoQuieto", 0);
     }
 }
