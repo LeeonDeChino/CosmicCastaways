@@ -14,7 +14,7 @@ public class PlayerCombat : MonoBehaviour
     {
         health = maxHealth;
         barraDeVida.InicializarBarraDeVida(health);
-        AudioManager.instance.StartMusic();
+        //AudioManager.instance.StartMusic();
 
     }
     public void TakeDamage(int damage)

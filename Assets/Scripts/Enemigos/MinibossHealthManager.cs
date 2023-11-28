@@ -28,6 +28,7 @@ public class MinibossHealthManager : MonoBehaviour
             {
                 MiniBossDeath();
                 AudioManager.instance.PlayMonster();
+                AudioManager.instance.PlayCastwaysave();
             }
         }  
 

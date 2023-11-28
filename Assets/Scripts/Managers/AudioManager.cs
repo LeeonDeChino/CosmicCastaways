@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip DoorLock22;
     public AudioClip magic03;
     public AudioClip mosnterscream57;
+    public AudioClip Win17;
 
     private void Awake()
     {
@@ -48,5 +49,10 @@ public class AudioManager : MonoBehaviour
     public void PlayMonster()
     {
         sourceAudio.PlayOneShot(mosnterscream57, 0.7f);
+    }
+
+    public void PlayCastwaysave()
+    {
+           sourceAudio.PlayOneShot(Win17, 0.7f);
     }
 }
