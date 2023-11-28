@@ -64,7 +64,7 @@ public class DisparoV2 : MonoBehaviour
     public void Disparar()
     {
         bulletPool.Get();
-        //sonido disparo
+        AudioManager.instance.PlayLaser();
     }
 
     private void DesactivarBalaPool(PlayerBulletV2 bullet)

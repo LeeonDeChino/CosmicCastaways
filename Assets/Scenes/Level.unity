@@ -153,11 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b563fc7ff492a7f49afcdeccb463773f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 23621358}
-  clips:
-  - {fileID: 8300000, guid: 51a4f1157b7ff1449b5e5cf064d584c7, type: 3}
-  - {fileID: 8300000, guid: 59ceeff8ab94d1f47b55c102760a6cc4, type: 3}
-  - {fileID: 8300000, guid: 4310474905e266640852f43bd609a1a4, type: 3}
+  sourceAudio: {fileID: 23621358}
+  Track4: {fileID: 8300000, guid: 51a4f1157b7ff1449b5e5cf064d584c7, type: 3}
+  laser_01: {fileID: 8300000, guid: 4310474905e266640852f43bd609a1a4, type: 3}
 --- !u!4 &23621357
 Transform:
   m_ObjectHideFlags: 0

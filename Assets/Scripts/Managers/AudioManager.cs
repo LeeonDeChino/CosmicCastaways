@@ -5,20 +5,24 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
-    public AudioSource audioSource;
-    public AudioClip[] clips;
+    public AudioSource sourceAudio;
+    public AudioClip Track4;
+    public AudioClip laser_01;
 
     private void Awake()
     {
         instance = this;
     }
 
-    public void PlaySound(int clip)
+    // crea diferentes funciones para reproducir y controlar el volumen 
+
+    public void StartMusic()
     {
-        audioSource.PlayOneShot(clips[clip]);
+       sourceAudio.PlayOneShot(Track4,0.3f);
     }
-    public void StopSound(int clip)
+
+    public void PlayLaser()
     {
-           audioSource.Stop();
+        sourceAudio.PlayOneShot(laser_01, 0.7f);
     }
 }
