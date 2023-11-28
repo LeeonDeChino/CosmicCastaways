@@ -39,4 +39,10 @@ public class PlayerAnimations : MonoBehaviour
     {
         animator.SetTrigger("jump");
     }
+
+    public void DisparoAnimacion()
+    {
+        if(input.button2Value == 1)
+            animator.SetFloat("disparando", 1);
+    }
 }

@@ -13,6 +13,8 @@ public class DisparoV2 : MonoBehaviour
 
     public ArduinoInput arduinoInput;
     private int input;
+
+    public PlayerAnimations player;
     
 
     private ObjectPool<PlayerBulletV2> bulletPool;
@@ -54,6 +56,7 @@ public class DisparoV2 : MonoBehaviour
             {
                 Disparar();
                 tiempoSiguienteDisparo = cooldown;
+                player.DisparoAnimacion();
             }
         }
 

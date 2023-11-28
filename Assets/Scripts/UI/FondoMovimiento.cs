@@ -11,6 +11,7 @@ public class FondoMovimiento : MonoBehaviour
 
     public Rigidbody2D jugador;
     public ArduinoInput input;
+    int val;
    
 
     private void Awake()
@@ -20,9 +21,16 @@ public class FondoMovimiento : MonoBehaviour
     }
     void Update()
     {
-        if(input.value == 1 || input.value == -1)
+        if(input.joystickValue <= 450)
         {
-            offset = (input.value * 0.1f) * velocidadMovimiento * Time.deltaTime;
+            val = -1;
+            offset = (val * 0.1f) * velocidadMovimiento * Time.deltaTime;
+            material.mainTextureOffset += offset;
+        }
+        else if(input.joystickValue >= 530)
+        {
+            val = 1;
+            offset = (val * 0.1f) * velocidadMovimiento * Time.deltaTime;
             material.mainTextureOffset += offset;
         }
         

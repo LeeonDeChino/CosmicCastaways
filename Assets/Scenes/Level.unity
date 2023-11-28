@@ -3524,7 +3524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 2066389335}
   playerSpeed: 5
-  jumpForce: 7
+  jumpForce: 10
   isGrounded: 0
 --- !u!114 &1135779750
 MonoBehaviour:
