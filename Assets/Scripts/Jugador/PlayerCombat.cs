@@ -53,4 +53,15 @@ public class PlayerCombat : MonoBehaviour
         }
         barraDeVida.CambiarVidaActual(health);
     }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Limite"))
+        {
+            PlayerDeath();
+        }
+        if (other.CompareTag("Meta"))
+        {
+            gameManager.LevelCompleted();
+        }
+    }
 }

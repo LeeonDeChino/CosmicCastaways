@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331ddbf6cdd70ba45be2c4d5f74d7260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanciaAlSuelo: 1.49
+  distanciaAlSuelo: 1.6
 --- !u!1102 &-3711028884759122229
 AnimatorState:
   serializedVersion: 6

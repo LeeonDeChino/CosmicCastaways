@@ -5,37 +5,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public Canvas gameOverCanvas;
-    //public GameObject pauseCanvas;
-    //public Canvas hudCanvas;
-    //public ArduinoInput arduinoInput;
-    //private int input;
+    public Canvas winCanvas;
+    public Canvas hudCanvas;
+    
     public Animator castaway, castaway2, castaway3;
     public int castawayCount = 0;
-    //private bool enPausa = false;
-
-    /*private void Update()
-    {
-        input = arduinoInput.value;
-
-        if(input == 4 && !enPausa)
-        {
-            Pausar();
-        }
-    }*/
-   /* private void Pausar()
-    {
-        enPausa = true;
-        Time.timeScale = 0;
-        pauseCanvas.SetActive(true);
-        hudCanvas.enabled = false;
-    }
-    public void Reanudar()
-    {
-        Time.timeScale = 1;
-        enPausa = false;
-        pauseCanvas.SetActive(false);
-        hudCanvas.enabled = true;
-    }*/
+    
     public void LiberarCastaways(int i)
     {
         castawayCount++;      
@@ -56,5 +31,12 @@ public class GameManager : MonoBehaviour
    public void GameOver()
    {
         gameOverCanvas.enabled = true;
+        hudCanvas.enabled = false;
    }
+
+   public void LevelCompleted()
+   {
+        winCanvas.enabled = true;
+        hudCanvas.enabled = false;
+    }
 }

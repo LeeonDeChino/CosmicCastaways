@@ -9,6 +9,8 @@ TagManager:
   - Ground
   - Castaways
   - MiniBoss
+  - Limite
+  - Meta
   layers:
   - Default
   - TransparentFX

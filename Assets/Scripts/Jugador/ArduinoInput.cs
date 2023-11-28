@@ -6,7 +6,7 @@ using System.IO.Ports;
 public class ArduinoInput : MonoBehaviour
 {
     public SerialPort sp = new SerialPort("COM5", 9600);
-    public int joystickValue,buttonValue,button2Value,button3Value;
+    public int joystickValue,buttonValue,button2Value;
     public int value;
 
     // Start is called before the first frame update
@@ -41,9 +41,9 @@ public class ArduinoInput : MonoBehaviour
         joystickValue = int.Parse(arrayInput[0]);
         buttonValue = int.Parse(arrayInput[1]);
         button2Value = int.Parse(arrayInput[2]);
-        button3Value = int.Parse(arrayInput[3]);
+  
 
-        Debug.Log(joystickValue+","+buttonValue+ ","+button2Value + ","+button3Value);
+        Debug.Log(joystickValue+","+buttonValue+ ","+button2Value);
 
 
         //Debug.Log(value);
