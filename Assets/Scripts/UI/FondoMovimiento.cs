@@ -21,16 +21,14 @@ public class FondoMovimiento : MonoBehaviour
     }
     void Update()
     {
-        if(input.joystickValue <= 450)
+        if(input.joystickValue == -1)
         {
-            val = -1;
-            offset = (val * 0.1f) * velocidadMovimiento * Time.deltaTime;
+            offset = (input.joystickValue * 0.1f) * velocidadMovimiento * Time.deltaTime;
             material.mainTextureOffset += offset;
         }
-        else if(input.joystickValue >= 530)
+        else if(input.joystickValue == 1)
         {
-            val = 1;
-            offset = (val * 0.1f) * velocidadMovimiento * Time.deltaTime;
+            offset = (input.joystickValue * 0.1f) * velocidadMovimiento * Time.deltaTime;
             material.mainTextureOffset += offset;
         }
         
