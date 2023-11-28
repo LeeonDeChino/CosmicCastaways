@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject buttonNavegation;
     
     public Animator castaway, castaway2, castaway3;
+    public GameObject poste1, poste2, cadena;
     public int castawayCount = 0;
 
     public bool isGameOver = false;
@@ -22,12 +23,15 @@ public class GameManager : MonoBehaviour
         {
             case 1:
                 castaway.SetTrigger("save");
+                poste1.SetActive(false);
                 break;
             case 2:
                 castaway2.SetTrigger("save");
+                poste2.SetActive(false);
                 break;
             case 3:
                 castaway3.SetTrigger("save");
+                cadena.SetActive(false);
                 break;
         }      
     }
