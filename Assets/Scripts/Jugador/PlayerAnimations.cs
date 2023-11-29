@@ -25,7 +25,7 @@ public class PlayerAnimations : MonoBehaviour
 
         animator.SetBool("isFalling", !isGrounded);
 
-        if (joystickV == 0 && control.axisH == 0)
+        if (joystickV == 0 && val == 0)
         {
             animator.SetBool("moving", false);
             DisparoQuieto();
@@ -34,7 +34,13 @@ public class PlayerAnimations : MonoBehaviour
         {
             animator.SetBool("moving", true);
         }
-        
+
+        boton2 = control.boton2;
+        if (input.button2Value == 1 || boton2 == 1)
+            animator.SetFloat("disparando", 1);
+        else
+            animator.SetFloat("disparando", 0);
+
     }
 
     public void TriggerJump()
@@ -42,14 +48,6 @@ public class PlayerAnimations : MonoBehaviour
         animator.SetTrigger("jump");
     }
 
-    public void DisparoAnimacion()
-    {
-        boton2 = control.boton2;
-        if (input.button2Value == 1 || boton2 == 1)
-            animator.SetFloat("disparando", 1);
-        else
-            animator.SetFloat("disparando", 0);
-    }
 
     public void DisparoQuieto()
     {

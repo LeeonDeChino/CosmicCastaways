@@ -59,7 +59,6 @@ public class DisparoV2 : MonoBehaviour
             {
                 Disparar();
                 tiempoSiguienteDisparo = cooldown;
-                player.DisparoAnimacion();
             }
         }
 
