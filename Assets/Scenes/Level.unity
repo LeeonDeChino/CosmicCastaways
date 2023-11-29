@@ -658,6 +658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadMovimiento: {x: 0.6, y: 0}
+  control: {fileID: 2066389336}
   jugador: {fileID: 1135779745}
   input: {fileID: 2066389335}
 --- !u!212 &177840227
@@ -13715,6 +13716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadMovimiento: {x: 2.6, y: 0}
+  control: {fileID: 2066389336}
   jugador: {fileID: 1135779745}
   input: {fileID: 2066389335}
 --- !u!212 &681943206
@@ -14613,6 +14615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadMovimiento: {x: 2, y: 0}
+  control: {fileID: 2066389336}
   jugador: {fileID: 1135779745}
   input: {fileID: 2066389335}
 --- !u!212 &853270906
@@ -15843,6 +15846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1135779742}
   input: {fileID: 2066389335}
+  control: {fileID: 2066389336}
 --- !u!114 &1135779749
 MonoBehaviour:
   m_ObjectHideFlags: 0

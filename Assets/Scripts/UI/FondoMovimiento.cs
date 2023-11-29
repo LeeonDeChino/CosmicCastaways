@@ -8,27 +8,27 @@ public class FondoMovimiento : MonoBehaviour
 
     private Vector2 offset;
     private Material material;
-
+    public ControllerInput control;
     public Rigidbody2D jugador;
     public ArduinoInput input;
-    int val;
+    float val;
    
 
     private void Awake()
     {
         material = GetComponent<SpriteRenderer>().material;
-
     }
     void Update()
     {
-        if(input.joystickValue == -1)
+        val = control.axisH;
+        if(input.joystickValue == -1 || control.axisH <= -0.1f)
         {
-            offset = (input.joystickValue * 0.1f) * velocidadMovimiento * Time.deltaTime;
+            offset = (-1f * 0.1f) * velocidadMovimiento * Time.deltaTime;
             material.mainTextureOffset += offset;
         }
-        else if(input.joystickValue == 1)
+        else if(input.joystickValue == 1 || control.axisH >= 0.1f)
         {
-            offset = (input.joystickValue * 0.1f) * velocidadMovimiento * Time.deltaTime;
+            offset = (1 * 0.1f) * velocidadMovimiento * Time.deltaTime;
             material.mainTextureOffset += offset;
         }
         

@@ -8,9 +8,10 @@ public class PlayerAnimations : MonoBehaviour
     PlayerMovement player;
     private bool isGrounded;
     public ArduinoInput input;
+    public ControllerInput control;
     private int joystickV;
-
-    // Update is called once per frame
+    float boton2;
+    float val;
 
     private void Awake()
     {
@@ -19,12 +20,12 @@ public class PlayerAnimations : MonoBehaviour
     void Update()
     {
         joystickV = input.joystickValue;
-
+        val = control.axisH;
         isGrounded = player.isGrounded;
 
         animator.SetBool("isFalling", !isGrounded);
 
-        if (joystickV == 0)
+        if (joystickV == 0 && control.axisH == 0)
         {
             animator.SetBool("moving", false);
             DisparoQuieto();
@@ -43,7 +44,8 @@ public class PlayerAnimations : MonoBehaviour
 
     public void DisparoAnimacion()
     {
-        if (input.button2Value == 1)
+        boton2 = control.boton2;
+        if (input.button2Value == 1 || boton2 == 1)
             animator.SetFloat("disparando", 1);
         else
             animator.SetFloat("disparando", 0);
@@ -51,7 +53,8 @@ public class PlayerAnimations : MonoBehaviour
 
     public void DisparoQuieto()
     {
-        if (input.button2Value == 1)
+        boton2 = control.boton2;
+        if (input.button2Value == 1 || boton2 == 1)
             animator.SetFloat("disparoQuieto", 1);
         else
             animator.SetFloat("disparoQuieto", 0);
