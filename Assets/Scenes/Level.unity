@@ -19168,7 +19168,6 @@ GameObject:
   - component: {fileID: 2024633336}
   - component: {fileID: 2024633335}
   - component: {fileID: 2024633342}
-  - component: {fileID: 2024633343}
   m_Layer: 8
   m_Name: MiniBoss3
   m_TagString: MiniBoss
@@ -19396,18 +19395,6 @@ MonoBehaviour:
   shootRange: 6.45
   bulletPrefab: {fileID: 7605704577245184049, guid: d9ea28d728e97994fba016525326c8db, type: 3}
   shootPoint: {fileID: 815220786}
---- !u!114 &2024633343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2024633333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c59bd5d940250a41bd1754b3e5325f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2028096988
 GameObject:
   m_ObjectHideFlags: 0
