@@ -26,19 +26,19 @@ public class GameManager : MonoBehaviour
                 castaway.SetTrigger("save");
                 ccCam1.SetActive(true);
                 poste1.SetActive(false);
-                Invoke("DesactivarCam", 2.5f);
+                Invoke("DesactivarCam", 3f);
                 break;
             case 2:
                 castaway2.SetTrigger("save");
                 ccCam2.SetActive(true);
                 poste2.SetActive(false);
-                Invoke("DesactivarCam", 2.5f);
+                Invoke("DesactivarCam", 3f);
                 break;
             case 3:
                 castaway3.SetTrigger("save");
                 ccCam3.SetActive(true);
                 cadena.SetActive(false);
-                Invoke("DesactivarCam", 2.5f);
+                Invoke("DesactivarCam", 3f);
                 break;
         }      
     }
